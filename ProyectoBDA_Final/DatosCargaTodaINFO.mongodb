@@ -1,0 +1,434 @@
+
+/* Creacion de colleciones */ 
+
+db.createCollection("usuarios")
+IU = function(id,Apellidos,Nombre,direccion,fechaInicioUsuario,SaldoUsuario,Relacionador){db.usuarios.insertOne({_id:id,Apellidos:Apellidos,NombreUsuario:Nombre,Direccion:direccion,fechaInicioUsuario:fechaInicioUsuario,SaldoUsuario:SaldoUsuario,Relacionador:Relacionador})}
+
+db.createCollection("instrumentosBancarios")
+
+IB = function(NombreBanco,Movimientos_Negativos_Banco,Movimientos_Positivos_Banco,Clave,Numero_tarjeta,Celular_Asosiado,Saldo,Credito,Rendimiento_Bancario,Numero_Inversionistas_Banco,Relacionador){db.instrumentosBancarios.insertOne({NombreBanco:NombreBanco,MovimientosNegativosBanco:Movimientos_Negativos_Banco,MovimientosPositivosBanco:Movimientos_Positivos_Banco,Clave:Clave,NumeroTarjeta:Numero_tarjeta,CelularAsosiado:Celular_Asosiado,Saldo:Saldo,Credito:Credito,RendimientoBancario:Rendimiento_Bancario,NumeroInversionistasBanco:Numero_Inversionistas_Banco,Relacionador:Relacionador})}
+
+db.createCollection("fibras")
+
+IF = function(NombreOrganizacion,TipoInmueble,Ubicacion,MontoMinimo,MontoRequerido,FechaInicioFibra,FechaDevolucionFibra){db.fibras.insertOne({NombreOrganizacion:NombreOrganizacion,TipoInmueble:TipoInmueble,Ubicacion:Ubicacion,MontoMinimo:MontoMinimo,MontoRequerido:MontoRequerido,FechaInicioFibra:FechaInicioFibra,FechaDevolucionFibra:FechaDevolucionFibra})}
+
+db.createCollection("CasasBolsa")
+
+ICB = function(Nombre,NombreInstitucion,CantidadAcciones,rendimiento,saldo){db.CasasBolsa.insertOne({Nombre:Nombre,NombreInstitucion:NombreInstitucion,CantidadAcciones:CantidadAcciones,rendimiento:rendimiento,saldo:saldo})}
+
+db.createCollection("SAT")
+
+ISAT = function(NombreInstrumento,CuantoGano,CuantoInvirtio,CuantoPerdio,DeudaSAT,RFC,RegimenFiscal,Relacionador){db.SAT.insertOne({NombreInstrumento:NombreInstrumento,CuantoGano:CuantoGano,CuantoInvirtio:CuantoInvirtio,CuantoPerdio:CuantoPerdio,DeudaSAT:DeudaSAT,RFC:RFC,RegimenFiscal:RegimenFiscal,Relacionador:Relacionador})}
+
+/*Introduccion de Usuarios*/
+IU(1,"Torres","Eduardo",{DirIP:"37.168.52.11",Ciudad:"CDMX",Alcaldia:"GAM"},ISODate("2019-11-19"),800, ObjectId("63c879d254477eec5a071ef4"))
+IU(2,"Hernández.","Juan",{DirIP:"13.3.2023.11418",Ciudad:"CDMX",Alcaldia:"Coyoacán"},ISODate("2023-03-13"),11418, ObjectId("63c87d5254477eec5a071ef5"))
+IU(3,"García.","José Luis",{DirIP:"19.8.2023.5980",Ciudad:"Acapulco",Alcaldia:"Cuajimalpa de Morelos"},ISODate("2023-08-19"),5980, ObjectId("63c87d5254477eec5a071ef6"))
+IU(4,"Martínez.","José",{DirIP:"7.2.2018.10724",Ciudad:"Aguascalientes",Alcaldia:"Gustavo A. Madero"},ISODate("2018-02-07"),10724, ObjectId("63c87d9b54477eec5a071ef8"))
+IU(5,"López.","María Guadalupe",{DirIP:"1.12.2019.6080",Ciudad:"Apodaca",Alcaldia:"Iztacalco"},ISODate("2019-12-01"),6080 ,ObjectId("63c87db654477eec5a071ef9"))
+IU(6,"González.","Franciso",{DirIP:"27.4.2022.12049",Ciudad:"Buenavista",Alcaldia:"Iztapalapa"},ISODate("2022-04-27"),12049, ObjectId("63c87db654477eec5a071efa"))
+IU(7,"Pérez.","Guadalupe",{DirIP:"6.7.2020.14937",Ciudad:"Campeche",Alcaldia:"La Magdalena Contreras"},ISODate("2020-07-06"),14937,ObjectId("63c87db654477eec5a071efb"))
+IU(8,"Rodríguez.","María",{DirIP:"28.3.2022.13602",Ciudad:"Cancún",Alcaldia:"Milpa Alta"},ISODate("2022-03-28"),13602,                  ObjectId("63c87db654477eec5a071efc"))
+IU(9,"Sánchez","Juana",{DirIP:"14.11.2018.13492",Ciudad:"Celaya",Alcaldia:"Álvaro Obregón"},ISODate("2018-11-14"),13492 ,              ObjectId("63c87db654477eec5a071efd"))
+IU(10,"Aké","Antonio",{DirIP:"4.8.2019.8580",Ciudad:"Chalco",Alcaldia:"Tláhuac"},ISODate("2019-08-04"),8580,                             ObjectId("63c87db654477eec5a071efe"))
+IU(11,"Baas.","Jesús",{DirIP:"10.9.2020.7799",Ciudad:"Chetumal",Alcaldia:"Tlalpan"},ISODate("2020-09-10"),7799 ,                         ObjectId("63c8821d54477eec5a071eff"))
+IU(12,"Bacab.","Miguel Ángel",{DirIP:"12.11.2023.8926",Ciudad:"Chicoloapan",Alcaldia:"Xochimilco"},ISODate("2023-11-12"),8926 ,          ObjectId("63c8821d54477eec5a071f00"))
+IU(13,"Balam.","Pedro",{DirIP:"11.2.2020.12956",Ciudad:"Chihuahua",Alcaldia:"Benito Juárez"},ISODate("2020-02-11"),12956 ,               ObjectId("63c8821d54477eec5a071f01"))
+IU(14,"Cab.","Alejandro",{DirIP:"12.6.2021.7883",Ciudad:"Chilpancingo",Alcaldia:"Cuauhtémoc"},ISODate("2021-06-12"),7883,                ObjectId("63c8821d54477eec5a071f02"))
+IU(15,"Can.","Manuel",{DirIP:"6.6.2022.8523",Ciudad:"Chimalhuacán",Alcaldia:"Miguel Hidalgo"},ISODate("2022-06-06"),8523 ,               ObjectId("63c8821d54477eec5a071f03"))
+IU(16,"Camal.","Margarita",{DirIP:"3.8.2021.6770",Ciudad:"Ciudad Acuña",Alcaldia:"Venustiano Carranza"},ISODate("2021-08-03"),6770 ,     ObjectId("63c8821d54477eec5a071f04"))
+IU(17,"Canul.","María del Carmen",{DirIP:"13.11.2022.10062",Ciudad:"CDMX",Alcaldia:"Azcapotzalco"},ISODate("2022-11-13"),10062,          ObjectId("63c8821d54477eec5a071f05"))
+IU(18,"López.","Juan Carlos",{DirIP:"13.1.2020.6233",Ciudad:"Ciudad del Carmen",Alcaldia:"Venustiano Carranza"},ISODate("2020-01-13"),6233, ObjectId("63c8821d54477eec5a071f06"))
+IU(19,"González.","Roberto",{DirIP:"14.7.2020.8570",Ciudad:"Ciudad López Mateos",Alcaldia:"Tlalpan"},ISODate("2020-07-14"),8570,        ObjectId("63c8821d54477eec5a071f07"))
+IU(20,"Pérez.","Fernando",{DirIP:"15.11.2018.7947",Ciudad:"Ciudad Madero",Alcaldia:"Benito Juárez"},ISODate("2018-11-15"),7947,          ObjectId("63c8821d54477eec5a071f08"))
+IU(21,"Rodríguez.","Daniel",{DirIP:"1.12.2021.12777",Ciudad:"Ciudad Obregón",Alcaldia:"Cuauhtémoc"},ISODate("2021-12-01"),12777 ,       ObjectId("63c8821d54477eec5a071f09"))
+
+/*Introduccion de Instrumentos Bancarios*/
+
+IB("BBVA",8000,10000,6461801701885895,4152313797433393,5545260372,15000,5000,    5,5000,ObjectId("63c879d254477eec5a071ef4"))
+IB("BBVA",9903,6150,1218003160249628162120,3160249628162120,5580848987,12848,21392 , 5, 5000,ObjectId("63c87d5254477eec5a071ef5"))
+IB("Santander",6256,6215,1218002625616713320600,2625616713320600,5564279889,19920,17647, 15,8000,ObjectId("63c87d5254477eec5a071ef6") )
+IB("Citibanamex",12901,5591,1218003905594422032790,3905594422032790,5596559706,12378,18698, 8,7456,ObjectId("63c87d9b54477eec5a071ef8") )
+IB("Banorte",11998,7958,1218003732303226948350,3732303226948350,5564344049,16027,19696 , 11, 3000,ObjectId("63c87db654477eec5a071ef9"))
+IB("BANOBRAS",6698,5422,1218005718906821506020,5718906821506020,5516796336,18933,23889 ,  4, 4000,ObjectId("63c87db654477eec5a071efa"))
+IB("HSBC",6294,5966,1218007208990387870430,7208990387870430,5596512017,15371,23222 ,  23, 3246 , ObjectId("63c87db654477eec5a071efb"))
+IB("Scotiabank",9165,7228,1218002833010603409680,2833010603409680,5512214279,17634,22205 , 25,1342,ObjectId("63c87db654477eec5a071efc"))
+IB("Nacional financiera",5389,7017,1218006690303895719970,6690303895719970,5517870348,19243,16341, 13,1000,ObjectId("63c87db654477eec5a071efd"))
+IB("Bancomext",8192,7913,1218007983433786849700,7983433786849700,5523210122,16056,19620 , 7,586,ObjectId("63c87db654477eec5a071efe"))
+
+IB("Inbursa",6884,6420,1218005825318413708610,5825318413708610,5517361145,10397,22613 , 14,3789,ObjectId("63c8821d54477eec5a071eff"))
+IB("Banbanjio",9200,6298,1218004292989041928600,4292989041928600,5532009176,15021,18827, 3,2456,ObjectId("63c8821d54477eec5a071f00"))
+IB("Banco Azteca",5277,6684,1218005804273706534770,5804273706534770,5517663256,15990,22583 , 1, 2345,ObjectId("63c8821d54477eec5a071f01") )
+IB("JP Morgan",7125,6026,1218007329462465607030,7329462465607030,5557326580,14424,23732 , 10, 7890, ObjectId("63c8821d54477eec5a071f02") )
+IB("Monex",14527,7546,1218004084520641106930,4084520641106930,5581376945,17064,21729 , 14,909,ObjectId("63c8821d54477eec5a071f03"))
+IB("Afirme",5077,7748,1218001410636457451660,1410636457451660,5555235724,17756,23217 ,16,2090,ObjectId("63c8821d54477eec5a071f04"))
+IB("Banregio",6843,6925,1218005890653717297440,5890653717297440,5555112098,19251,21823 , 18,1009,ObjectId("63c8821d54477eec5a071f05"))
+IB("Sociedad Hipotecaria Federal",9352,5632,1218005225893915924670,5225893915924670,5516117612,17214,19264,  21, 3267,ObjectId("63c8821d54477eec5a071f06"))
+IB("Sabadell",12404,5042,1218002778853253765720,2778853253765720,5559604211,18480,18558 ,  26, 6578,ObjectId("63c8821d54477eec5a071f07"))
+IB("Banjercito",14962,6788,1218005453294496849920,5453294496849920,5586946524,13904,22114 , 28, 4563,ObjectId("63c8821d54477eec5a071f08"))
+IB("Bancoppel",14694,6210,1218006933418330670550,6933418330670550,5554671911,14430,22303 , 29, 879, ObjectId("63c8821d54477eec5a071f09"))
+
+
+/*Introduccion de fibras */
+
+IF("Fibra1","Plaza universidad","Avenida Universidad",1000,20000000,ISODate("2004-05-12"),ISODate("2007-06-25"))
+IF("Fibramty","Terreno","Coyoacán",2888,1542648,ISODate("2022-01-04"),ISODate("2023-01-04"))
+IF("Upsite","Edificio","Cuajimalpa de Morelos",2727,5363544,ISODate("2022-04-26"),ISODate("2022-04-26"))
+IF("Fibra Educa","Apartamento","Gustavo A. Madero",4454,1835148,ISODate("2019-06-28"),ISODate("2019-06-28"))
+IF("FibraUno","Casa","Iztacalco",4960,1493630,ISODate("2021-07-09"),ISODate("2021-07-09"))
+IF("FibraStorage","Fábrica","Iztapalapa",4467,4861173,ISODate("2020-05-25"),ISODate("2020-05-25"))
+IF("Fibra Danhos","Local","La Magdalena Contreras",1647,1302308,ISODate("2019-02-16"),ISODate("2019-02-16"))
+IF("Fibra Shop","Mina","Milpa Alta",4066,2390589,ISODate("2022-01-29"),ISODate("2022-01-29"))
+IF("Fibra INN","Parcela","Álvaro Obregón",3068,1225978,ISODate("2019-04-08"),ISODate("2019-04-08"))
+IF("Fibra Nova","Centro comercial","Tláhuac",4792,1040847,ISODate("2023-10-07"),ISODate("2023-10-07"))
+IF("Fibra prologis","Finca","Tlalpan",4313,1637194,ISODate("2021-11-27"),ISODate("2021-11-27") )
+IF("TerraFina","Terreno","Xochimilco",4541,3779443,ISODate("2018-10-05"),ISODate("2018-10-05"))
+IF("Fibra soma","Edificio","Benito Juárez",2951,1617791,ISODate("2020-01-07"),ISODate("2020-01-07"))
+IF("FirbaStorage","Departamento","Cuauhtémoc",4355,3395621,ISODate("2020-06-07"),ISODate("2020-06-07"))
+IF("Upsite","Vivienda","Miguel Hidalgo",4723,2509607,ISODate("2018-12-25"),ISODate("2018-12-25"))
+IF("Fibra Nova","Casa","Venustiano Carranza",1598,1385556,ISODate("2023-01-09"),ISODate("2023-01-09"))
+IF("Fibramty","Parcela","Azcapotzalco",2620,2393078,ISODate("2022-06-05"),ISODate("2022-06-05"))
+IF("FibraUno","Centro comercial","Venustiano Carranza",2324,5278373,ISODate("2018-06-04"),ISODate("2018-06-04"))
+IF("Fibra Danhos","Finca","Tlalpan",3593,5100344,ISODate("2018-03-16"),ISODate("2018-03-16"))
+IF("Fibra Educa","Mina","Benito Juárez",4644,3835826,ISODate("2020-09-05"),ISODate("2020-09-05"))
+IF("Fibra INN","Local","Cuauhtémoc",2618,1541142,ISODate("2018-10-09"),ISODate("2018-10-09"))
+
+
+/*Introduccion de casas bolsa*/ 
+
+ICB("BMV","Tesla",3000000,5,10000)
+ICB("ACCIONES Y VALORES BANAMEX, S.A. DE C.V., CASA DE BOLSA, INTEGRANTE DEL GRUPO FINANCIERO BANAMEX. (CB ACCIVAL)","ARCA CONTINENTAL, S.A.B. DE C.V.",4059655,7,40162)
+ICB("ACTINVER CASA DE BOLSA, S.A. DE C.V., GRUPO FINANCIERO ACTINVER (CB ACTINVER)","ACCELSA",3385629,7,34257)
+ICB("BARCLAYS CAPITAL CASA DE BOLSA, S.A. DE C.V., GRUPO FINANCIERO BARCLAYS MEXICO (CB BARCLAYS CAPITAL)","ACTINVR",5144481,1,38996)
+ICB("BTG PACTUAL CASA DE BOLSA, S.A. DE C.V.","AEROMEX",2859452,5,37690)
+ICB("CASA DE BOLSA BANORTE IXE, S.A. DE C.V., GRUPO FINANCIERO BANORTE (CB IXE)","AGRIEXP",2763594,4,27142)
+ICB("CASA DE BOLSA BASE, S.A. DE C.V., GRUPO FINANCIERO BASE. (CB BASE)","AGUA",2842557,1,17089)
+ICB("CASA DE BOLSA BBVA BANCOMER, S.A. DE C.V., GRUPO FINANCIERO BBVA BANCOMER (CB BBVA BANCOMER)","AHMSA",3042074,1,47874)
+ICB("CASA DE BOLSA CREDIT SUISSE (MEXICO), S.A. DE C.V., GRUPO FINANCIERO CREDIT SUISSE MEXICO (CASA DE BOLSA CREDIT)","ALEATIC",1372590,2,18429)
+ICB("CASA DE BOLSA FINAMEX, S.A.B. DE C.V.","ALFA",1789674,5,23912)
+ICB("CASA DE BOLSA MULTIVA, S.A. DE C.V., GRUPO FINANCIERO MULTIVA (CB MULTIVA)","ALPEK",2258721,1,36234)
+ICB("CASA DE BOLSA SANTANDER, S.A. DE C.V., GRUPO FINANCIERO SANTANDER MEXICO (CB SANTANDER)","ALSEA",4718254,2,34116)
+ICB("CASA DE BOLSA VE POR MAS, S.A. DE C.V. GRUPO FINANCIERO VE POR MAS, S.A DE C.V. (CB VE POR MAS)","ALTERNA",5600366,1,18857)
+ICB("CI CASA DE BOLSA, S.A. DE C.V. (CI CASAS DE BOLSA)","AMX",2164363,3,22973)
+ICB("DEUTSCHE SECURITIES, S. A. DE C.V., CASA DE BOLSA (CB DEUTSCHE SEC)","ANB",4113339,1,29783)
+ICB("DUMBARTON SECURITIES (MEXICO), S.A. DE C.V., CASA DE BOLSA (CB ABN AMRO)","ARA",3052549,1,30616)
+ICB("EVERCORE CASA DE BOLSA, S.A. DE C.V. (CB EVERCORE)","ARISTOS",3726048,5,26563)
+ICB("GBM GRUPO BURSATIL MEXICANO, S.A. DE C.V., CASA DE BOLSA (CB GBM)","ASUR",5700090,7,48746)
+ICB("GOLDMAN SACHS MEXICO, CASA DE BOLSA, S.A. DE C.V.","AUTLAN",4917960,2,39065)
+ICB("HSBC CASA DE BOLSA, S.A. DE C.V., GRUPO FINANCIERO HSBC (CB HSBC)","AXTEL",4685509,4,43425)
+ICB("INTERACCIONES CASA DE BOLSA, S.A. DE C.V., GRUPO FINANCIERO INTERACCIONES (CB INTERACCIONES)","AZTECA",2834208,1,11327)
+
+/*Introduccion de SAT */
+ NombreInstrumento,CuantoGano,CuantoInvirtio,CuantoPerdio,DeudaSAT,RFC,RegimenFiscal
+ISAT("Fibra1",4000,5000,2000,0,"MDFC991102","Regimen General",ObjectId("63c879d254477eec5a071ef4"))
+ISAT("YaelEnterprise",10000,2000,1000,0,"MDFC991103","Regimen General",ObjectId("63c87d5254477eec5a071ef5"))
+ISAT("Fibra2",1000,2000,4000,1000,"MDFC991104","Regimen General",ObjectId("63c87d5254477eec5a071ef6"))
+ISAT("Fibra3",500,1500,4000,2000,"MDFC991105","Regimen General",ObjectId("63c87d9b54477eec5a071ef8"))
+ISAT("Fibra4",3000,500,100,0,"MDFC991106","Regimen General",ObjectId("63c87db654477eec5a071ef9"))
+ISAT("Fibra5",100,200,3000,2700,"MDFC991107","Regimen General",ObjectId("63c87db654477eec5a071efa"))
+ISAT("CanoEnterprise",1000,3000,8000,4000,"MDFC991108","Regimen General",ObjectId("63c87db654477eec5a071efb"))
+ISAT("Fibra6",300,200,50,0,"MDFC991109","Regimen General",ObjectId("63c87db654477eec5a071efc"))
+ISAT("Fibra7",3000,4000,1000,0,"MDFC991110","Regimen General",ObjectId("63c87db654477eec5a071efd"))
+ISAT("Fibra8",6000,2000,1000,0,"MDFC991111","Regimen General",ObjectId("63c87db654477eec5a071efe"))
+ISAT("Fibra9",4000,3000,1000,0,"MDFC991112","Regimen General",ObjectId("63c8821d54477eec5a071eff"))
+ISAT("Fibra10",1000,2000,0,0,"MDFC991113","Regimen General",ObjectId("63c8821d54477eec5a071f00"))
+ISAT("Fibra11",4000,5000,150,0,"MDFC991114","Regimen General",ObjectId("63c8821d54477eec5a071f01"))
+ISAT("Fibra12",3500,100,4400,800,"MDFC991115","Regimen General",ObjectId("63c8821d54477eec5a071f02"))
+ISAT("Fibra13",400,500,100,0,"MDFC991116","Regimen General",ObjectId("63c8821d54477eec5a071f03"))
+ISAT("Fibra14",500,200,3000,2300,"MDFC991117","Regimen General",ObjectId("63c8821d54477eec5a071f04"))
+ISAT("Fibra15",4200,300,2000,0,"MDFC991118","Regimen General",ObjectId("63c8821d54477eec5a071f05"))
+ISAT("Fibra16",1000,200,3000,1800,"MDFC991119","Regimen General",ObjectId("63c8821d54477eec5a071f06"))
+ISAT("Fibra17",100,200,300,0,"MDFC991120","Regimen General",ObjectId("63c8821d54477eec5a071f07"))
+ISAT("Fibra18",200,300,100,0,"MDFC991121","Regimen General",ObjectId("63c8821d54477eec5a071f08"))
+ISAT("Fibra19",100,200,400,100,"MDFC991122","Regimen General",ObjectId("63c8821d54477eec5a071f09"))
+
+/*Consulta 1*/
+
+db.CasasBolsa.find().sort({rendimiento:-1}).limit(3)
+
+db.CasasBolsa.aggregate(
+  {
+    $match:{
+      rendimiento : { $gt:3}
+    }
+  },
+  {
+    $sort: {
+      rendimiento: -1
+    }
+  },
+  { 
+    $limit: 3
+  }
+)
+
+/*Consulta 2 */
+
+db.instrumentosBancarios.find().sort({RendimientoBancario:1}).limit(3)
+
+db.instrumentosBancarios.aggregate(
+  {
+    $match: {
+      RendimientoBancario : {$lte : 5 }
+    }
+  },
+  {
+    $sort: {
+      RendimientoBancario: 1
+    }
+  },
+  {
+    $limit: 3
+  }
+)
+
+/*Consulta 3*/
+
+db.instrumentosBancarios.find().sort({RendimientoBancario:-1}).limit(3)
+
+db.instrumentosBancarios.aggregate(
+  {
+    $match: {
+      RendimientoBancario : { $gte : 15 }
+    }
+  },
+  {
+    $sort:{
+      RendimientoBancario : -1
+    }
+  },
+  {
+    $limit: 3
+  }
+)
+
+/*Consulta 4 */
+
+db.SAT.aggregate(
+  [
+    {
+      
+        $project: {
+        _id: "$NombreInstrumento",
+        MaxGanancia:{$max : "$CuantoGano"},
+        Relacionador:1
+        }
+    },
+    {
+      $sort: {
+        MaxGanancia: -1
+      }
+    },
+    {
+      $limit: 10
+    },
+    {
+
+      $lookup: {
+        from: 'usuarios',
+        pipeline:[
+          {
+      $project: {
+        _id :0,
+        NombreUsuario:1,
+      }
+    }
+
+        ],
+        localField:'Relacionador',
+        foreignField: 'Relacionador',
+        as: 'UsuarioInfo'
+      }
+    }
+
+        
+  ]
+)
+/*Consulta 5*/
+db.SAT.aggregate(
+  [
+    {
+      
+        $project: {
+        _id: "$NombreInstrumento",
+        MaxGanancia:{$min : "$CuantoGano"},
+        Relacionador:1
+        }
+    },
+    {
+      $sort: {
+        MaxGanancia: 1
+      }
+    },
+    {
+      $limit: 10
+    },
+    {
+
+      $lookup: {
+        from: 'usuarios',
+        pipeline:[
+          {
+      $project: {
+        _id :0,
+        NombreUsuario:1,
+      }
+    }
+
+        ],
+        localField:'Relacionador',
+        foreignField: 'Relacionador',
+        as: 'UsuarioInfo'
+      }
+    }
+
+        
+  ]
+)
+
+/*Consulta 6*/
+
+db.SAT.aggregate(
+  [
+    {
+      $project:{
+        _id:0,
+        DeudaSAT:1,
+        Relacionador:1
+      }
+    },
+    {
+      $match:{
+        DeudaSAT:{$gt : 0}
+        }
+    },
+    {
+      $lookup:{
+        from:'usuarios',
+        pipeline:[
+          {
+            $project:{
+              _id:0,
+              NombreUsuario:1
+            }
+          }
+        ],
+        localField:'Relacionador',
+        foreignField:'Relacionador',
+        as:'Usuario Info'
+      }
+    }
+  ]
+)
+
+/*Consulta 7 */
+db.instrumentosBancarios.aggregate(
+  [
+    {
+      $group:{
+        _id:{NombreBanco:"$NombreBanco"},
+        /*uniqueIds:{$addToSet:"$_id"},*/
+        count:{$sum:1},
+      }
+    },
+    {
+      $sort: {
+      count: -1
+    }
+    },
+    {
+
+      $limit: 3
+    },
+
+  ]
+)
+
+/* Consulta 8 */
+
+db.instrumentosBancarios.aggregate(
+  [
+    {
+
+      $project: {
+        _id:0,
+        NombreBanco:1,
+        NumeroInversionistasBanco:1
+      }
+    },
+    {
+      $sort:{
+        NumeroInversionistasBanco:-1
+      }
+    },
+    {
+      $limit:3
+    }
+  ]
+)
+
+/* consulta 9 */
+
+db.CasasBolsa.aggregate(
+  [
+    {
+      $project:{
+        _id:0,
+        Nombre:1,
+        CantidadAcciones:1
+      }
+    },
+    {
+      $sort:{
+        CantidadAcciones:-1
+      }
+    },
+    {
+      $limit:3
+    }
+  ]
+)
+
+/* Consulta 10 */
+db.instrumentosBancarios.aggregate(
+  [
+    {
+      $project:{
+        _id:0,
+        NombreBanco:1,
+        MovimientosPositivosBanco:1
+      }
+    },
+    {
+      $sort:{
+        MovimientosPositivosBanco:-1
+      }
+    },
+    {
+      $limit:5
+    }
+  ]
+)
+
+/* Consulta 11 */ 
+
+db.usuarios.aggregate(
+  [
+    {
+      $project:{
+        NombreUsuario:1,
+        SaldoUsuario:1
+      }
+    },
+    {
+      $sort:{
+        SaldoUsuario:-1
+      }
+    },
+    {
+      $limit:5
+    }
+  ]
+)
+
+
